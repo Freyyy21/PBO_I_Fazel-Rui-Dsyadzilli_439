@@ -4,6 +4,8 @@ import Tugas.Tugas_PBO.Tugas5.actions.MahasiswaActions;
 import Tugas.Tugas_PBO.Tugas5.data.Item;
 import Tugas.Tugas_PBO.Tugas5.main.LoginSystem;
 import java.util.InputMismatchException;
+
+import static Tugas.Tugas_PBO.Tugas5.main.LoginSystem.input;
 import static Tugas.Tugas_PBO.Tugas5.main.LoginSystem.reportedItems;
 
 
@@ -83,6 +85,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Input tidak valid!");
+                input.nextLine();
             }
         }
 

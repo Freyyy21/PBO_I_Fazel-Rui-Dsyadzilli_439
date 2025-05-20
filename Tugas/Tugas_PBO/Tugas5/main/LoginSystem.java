@@ -3,6 +3,8 @@ import Tugas.Tugas_PBO.Tugas5.data.Item;
 import Tugas.Tugas_PBO.Tugas5.users.Admin;
 import Tugas.Tugas_PBO.Tugas5.users.Mahasiswa;
 import Tugas.Tugas_PBO.Tugas5.users.User;
+
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -33,7 +35,6 @@ public class LoginSystem  {
         boolean condition = true;
         while (condition) {
             try {
-                while (condition) {
                     System.out.println("1. Login");
                     System.out.println("2. Keluar");
                     System.out.print("Masukkan pilihan: ");
@@ -54,12 +55,10 @@ public class LoginSystem  {
                                 System.out.println("Selamat datang Admin.");
                                 Admin admin = (Admin) loginUser;
                                 admin.displayAppMenu();
-                                condition = false;
                             } else if (loginUser instanceof Mahasiswa) {
                                 System.out.println("Selamat datang Mahasiswa.");
                                 Mahasiswa mahasiswa = (Mahasiswa) loginUser;
                                 mahasiswa.displayAppMenu();
-                                //condition = false;
                             }
                         } else {
                             System.out.println("Login gagal: username atau password salah.");
@@ -69,11 +68,10 @@ public class LoginSystem  {
                     } else {
                         System.out.println("Pilih menu yang ada!");
                     }
-                }
             } catch (InputMismatchException e) {
                 System.out.println("Input tidak valid! " + e.getMessage());
+                input.nextLine();
             }
-
         }
 
 
